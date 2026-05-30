@@ -2,6 +2,8 @@
 
 这是一个基于 React + TypeScript + Vite 开发的音乐人格测试应用，模仿MBTI测试形式，帮助用户发现与自己情感共鸣的夜鹿乐队歌曲。
 
+🎮 **在线试玩**：https://suisdokoxd.github.io/yrti-quiz/
+
 ## 项目介绍
 
 YRTI 是一个模仿MBTI测试形式的互动式音乐测试应用，用户通过回答一系列与情感、性格相关的问题，最终会得到一首与自己人格特质最匹配的夜鹿乐队歌曲推荐。应用的设计风格简约现代，带有一丝感性的艺术气息，与夜鹿乐队的音乐风格相呼应。
@@ -81,9 +83,30 @@ npm run preview
 - 详细的歌曲分析和歌词展示，帮助用户更深入理解推荐理由
 - 响应式布局，适配不同设备
 
+## 部署到 GitHub Pages
+
+本仓库已配置好项目页部署：
+
+- `vite.config.ts` 里设置 `base: '/yrti-quiz/'`，使打包资源路径匹配 Pages 子路径
+- 路由使用 `HashRouter`，无需服务端 rewrite 即可在 Pages 上正常跳转
+- 源码在 `main` 分支，构建产物发布到 `gh-pages` 分支
+
+重新部署：
+
+```bash
+npm run build
+cd dist && touch .nojekyll
+git init -b gh-pages && git add . && git commit -m "deploy"
+git push -f https://github.com/SuisDokoXD/yrti-quiz.git gh-pages
+```
+
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request 来帮助改进这个项目！
+
+## 致谢 / 出处
+
+Fork 自 [xingyuchen052-boop/yrti-quiz](https://github.com/xingyuchen052-boop/yrti-quiz)。曲目版权归 ヨルシカ（n-buna / suis）所有，本项目仅作粉丝向用途。
 
 ## 许可证
 
